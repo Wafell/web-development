@@ -1,2 +1,0 @@
-4
-/task4.php?first_name=ivan&last_name=uskov&email=uskov@gmail.com&age=25
