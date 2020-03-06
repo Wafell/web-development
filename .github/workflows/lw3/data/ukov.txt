@@ -1,4 +1,0 @@
-First name: ivan
-Last name: uskov
-Email: ukov
-Age: 24
