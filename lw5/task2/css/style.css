@@ -1,0 +1,296 @@
+*
+{
+	margin: 0;
+	padding: 0;
+
+}
+
+body
+{ 
+	background: url("../images/background.png") no-repeat;
+	background-position-y: 50px;
+}
+
+.icons
+{
+	margin-left: 480px;
+	height: 50px;
+}
+
+.icon_1
+{
+		
+	height: 50px;
+	float: left;
+}
+
+.icon_2
+{
+	width: 160px;
+	height: 50px;
+	float: left;
+	margin-top: 12px;
+	margin-left: 20px;
+}
+
+.icon_3
+{
+	width: 230px;
+	height: 50px;
+	float: left;
+	margin-top: 14px;
+	margin-left: 0px;
+}
+
+.wrap_container_1
+{
+	width: 1100px;
+	margin-top: 100px;
+	margin-left: 480px;
+	
+}
+
+.header
+{
+	margin-top: 192px;
+}
+
+.photo
+{
+	width: 330px;
+	height: 350px;
+	border-radius: 5px;
+	float: left;
+	margin-top: 4px;
+}
+
+.quote
+{
+	float: left;
+	width: 670px;
+	height: 150px;
+	margin-left: 63px;
+	margin-top: 27px;
+}
+
+blockquote 
+{
+	margin-top: 2px;
+	margin-left: 0px;
+	width: 500px;
+	font-size: 28px;
+	line-height: 42px;
+	color: #ffffff;
+	font-family: "Georgia";
+	font-style: italic;
+}
+
+cite
+{
+	margin-top: 60px;
+	margin-left: 6px;
+	font-size: 16px;
+	line-height: 42px;
+	color: #ffffff;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+}
+
+.clear
+{
+	clear: both;
+}
+
+.left_column
+{
+	float: left;
+	width: 330px;
+	margin-top: 5px;
+}
+
+.authors
+{
+	color: #61a78c;
+	margin-top: 39px;
+	font: 600 18pt "Open Sans";	
+}
+
+.films
+{
+	color: #61a78c;
+	margin-top: 48px;
+	font: 600 18pt "Open Sans";
+}
+
+ul
+{
+	margin: 20px;
+	padding: 0;
+	margin-top: 19px;
+}
+
+ol
+{
+	margin-left: 16px;
+	margin-top: 20px;
+}
+
+li 
+{
+	color: #555555;
+	margin-top: 14px;
+	margin-left: 2px;
+	font: 400 19px/22px Georgia;
+}
+
+.right_column 
+{
+	float: left;
+	margin-left: 55px;
+	margin-top: -210px;
+	width: 600px;
+	
+}
+
+h1 
+{
+	margin-top: 95px;
+	font-size: 48px;
+	line-height: 42px;
+	color: #333333;
+	font-family: "Open Sans";
+	font-weight: 700;
+}
+
+.splitter 
+{
+	height: 6px;
+	width: 60px;
+	border-radius: 3px;
+	background-color: #45c3aa;
+	margin-top: 31px;
+	margin-left: 4px;
+}
+
+.main_text
+{
+	color: #555555;
+	margin-left: 5px;
+	font: 14pt/24pt Georgia;
+	margin-top: 44px;	
+}
+
+h2 
+{
+	margin-top: 60px;
+	color: #363636;
+	font: 500 26pt/5pt "Open Sans";
+}
+
+.common_text 
+{
+	color: #555555;
+	margin-left: 6px;
+	font: 14pt/24pt Georgia;
+	margin-top: 33px;
+}
+
+a
+{
+	color: #15a98b;
+	font: 19px/32px Georgia;	
+	text-decoration: none;
+}
+
+.connect_link 
+{
+	margin-top: 42px;
+	margin-left: 5px;
+	float: left;
+}
+
+.link
+{
+	text-decoration: underline;
+	display: inline-block;
+}
+
+.movies
+{
+	width: 1200px;
+	margin-left: 360px;
+	margin-top: 110px;
+}
+
+.movie
+{
+	margin-top: 45px;
+	width: 285px;
+	float: left;
+	margin-right: 20px;
+}
+
+.movie_last
+{
+	margin-top: 45px;
+	width: 285px;
+	float: left;
+}
+
+.movie_image
+{
+	border-radius: 5px;
+	width: 285px;
+	height: 190px;	
+	margin-top: 6px;
+}
+
+.movie_name
+{
+	font-size: 22px;
+	line-height: 32px;
+	color: #333333;
+	font-family: "Open Sans";
+	font-weight: 700;
+	margin-top: 20px;
+	margin-left: -2px;
+}
+
+.movie_text
+{
+	width: 285px;
+	height: 565px;
+	font-size: 16px;
+	line-height: 28px;
+	color: #555555;
+	font-family: "Georgia";
+	margin-top: 17px;
+}
+
+.all_movie
+{
+	border-radius: 5px;
+	margin-left: 479px;
+	margin-top: -9px; 
+}
+
+footer
+{
+	background-color: #f5f5f5;
+	margin-top: 133px;
+	height: 70px;
+	
+}
+
+.footer_text
+{
+	font-size: 16px;
+	line-height: 32px;
+	color: #555555;
+	font-family: "Georgia";
+	vertical-align: middle;
+	text-align: center;
+	margin-top: -70px;
+	line-height: 75px;
+}
