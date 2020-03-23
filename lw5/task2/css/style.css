@@ -102,18 +102,20 @@ cite
 	margin-top: 5px;
 }
 
-.authors
+.list_name
 {
 	color: #61a78c;
+	font: 600 24px "Open Sans";
+}
+
+.authors
+{
 	margin-top: 39px;
-	font: 600 24px "Open Sans";	
 }
 
 .films
 {
-	color: #61a78c;
 	margin-top: 48px;
-	font: 600 24px "Open Sans";
 }
 
 ul
@@ -163,11 +165,15 @@ h1
 	margin-left: 4px;
 }
 
-.main_text
+.text
 {
 	color: #555555;
-	margin-left: 5px;
 	font: 19px/32px Georgia;
+}
+
+.main_text
+{
+	margin-left: 5px;
 	margin-top: 44px;	
 }
 
@@ -180,9 +186,7 @@ h2
 
 .common_text 
 {
-	color: #555555;
 	margin-left: 6px;
-	font: 19px/32px Georgia;
 	margin-top: 33px;
 }
 
