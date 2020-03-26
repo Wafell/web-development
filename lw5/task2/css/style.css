@@ -1,282 +1,360 @@
 *
 {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 
 }
 
 body
 { 
-	background: url("../images/background.png") no-repeat;
-	background-position-y: 50px;
+    background: url("../images/background.png") no-repeat;
+    background-position-y: 50px;
 }
 
-.icons
+.button_top_menu
 {
-	margin-left: 480px;
-	height: 50px;
+    height: 50px;
+    background-color: #fff;
+    border: 0px;
+    filter: brightness(100%)
 }
 
-.icon_1
+.button_top_menu:hover
 {
-		
-	height: 50px;
-	float: left;
+    height: 50px;
+    border: 0px;
+    background-color: #15a98c;
 }
 
-.icon_2
+.button_top_menu_1
 {
-	width: 160px;
-	height: 50px;
-	float: left;
-	margin-top: 12px;
-	margin-left: 20px;
+    width: 140px;
 }
 
-.icon_3
+.button_top_menu_2
 {
-	width: 230px;
-	height: 50px;
-	float: left;
-	margin-top: 14px;
-	margin-left: 0px;
+    width: 150px;
 }
+
+.button_top_menu_3
+{
+    width: 240px;
+}
+
+.image_top_menu
+{
+    height: 16px;
+    width: 16px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 8px;
+    margin-right: -10px;
+}
+
+.image_top_menu_2
+{
+    margin-left: 15px;
+    margin-right: -1px;
+}
+
+.image_top_menu_3
+{
+    margin-left: 22px;
+    margin-right: -12px;
+}
+
+.top_menu
+{
+    margin-left: 480px;
+    height: 50px;
+}
+
+.top_menu_text
+{
+    font: 19px/1.68421053 "Georgia"; 
+    color: #464646;
+}
+
+.top_menu_text_1
+{
+    margin-left: 
+}
+
+.button_top_menu:hover .top_menu_text
+{
+    font: 19px/1.68421053 "Georgia"; 
+    color: #fff;
+}
+
+.button_top_menu:hover .image_top_menu
+{
+    filter: brightness(10);
+}    
 
 .wrap_container_1
 {
-	width: 1100px;
-	margin-top: 100px;
-	margin-left: 480px;
-	
+    width: 1100px;
+    margin-top: 205px;
+    margin-left: 480px;
 }
 
 .header
 {
-	margin-top: 192px;
+    margin-top: 192px;
 }
 
 .photo
 {
-	width: 330px;
-	height: 350px;
-	border-radius: 5px;
-	float: left;
-	margin-top: 4px;
+    width: 330px;
+    height: 350px;
+    border-radius: 5px;
+    float: left;
+    margin-top: 4px;
 }
 
 .quote
 {
-	float: left;
-	width: 670px;
-	height: 150px;
-	margin-left: 63px;
-	margin-top: 27px;
+    float: left;
+    width: 670px;
+    height: 150px;
+    margin-left: 63px;
+    margin-top: 27px;
+    margin-bottom: 62px;
 }
 
 blockquote 
 {
-	margin-top: 2px;
-	margin-left: 0px;
-	width: 500px;
-	color: #ffffff;
-	font: italic 28px/42px "Georgia";  
+    margin-top: 2px;
+    margin-left: 0px;
+    width: 500px;
+    color: #ffffff;
+    font: italic 28px/1.5 "Georgia";  
 }
 
 cite
 {
-	margin-top: 60px;
-	margin-left: 6px;
-	color: #ffffff;
-	font: normal 600 16px/42px "Open Sans", sans-serif; 
+    margin-top: 60px;
+    margin-left: 6px;
+    color: #ffffff;
+    font: 600 16px/2.625 "Open Sans", sans-serif;
+    margin-bottom: 100px; 
 }
 
 .clear
 {
-	clear: both;
+    clear: both;
 }
 
 .left_column
 {
-	float: left;
-	width: 330px;
-	margin-top: 5px;
+    float: left;
+    width: 330px;
+    margin-top: 5px;
 }
 
 .list_name
 {
-	color: #61a78c;
-	font: 600 24px "Open Sans";
+    color: #61a78c;
+    font: 600 24px "Open Sans";
 }
 
 .authors
 {
-	margin-top: 39px;
+    margin-top: 39px;
 }
 
 .films
 {
-	margin-top: 48px;
+    margin-top: 48px;
 }
 
 ul
 {
-	margin: 20px;
-	padding: 0;
-	margin-top: 19px;
+    margin: 20px;
+    padding: 0;
+    margin-top: 19px;
 }
 
 ol
 {
-	margin-left: 16px;
-	margin-top: 20px;
+    margin-left: 16px;
+    margin-top: 20px;
 }
 
 li 
 {
-	color: #555555;
-	margin-top: 14px;
-	margin-left: 2px;
-	font: 400 19px/22px Georgia;
+    color: #555555;
+    margin-top: 14px;
+    margin-left: 2px;
+    font: 400 19px/1.15789474 Georgia;
 }
 
 .right_column 
 {
-	float: left;
-	margin-left: 55px;
-	margin-top: -210px;
-	width: 600px;
-	
+    float: left;
+    margin-left: 55px;
+    margin-top: -210px;
+    width: 600px;
+    
 }
 
 h1 
 {
-	margin-top: 95px;
-	color: #333333;
-	font: 700 48px/42px "Open Sans";
+    margin-top: 95px;
+    margin-left: 390px;
+    margin-bottom: 25px;
+    color: #333333;
+    font: 700 48px/0.875 "Open Sans";
 }
 
 .splitter 
 {
-	height: 6px;
-	width: 60px;
-	border-radius: 3px;
-	background-color: #45c3aa;
-	margin-top: 31px;
-	margin-left: 4px;
+    height: 6px;
+    width: 60px;
+    border-radius: 3px;
+    background-color: #45c3aa;
+    margin-top: 31px;
+    margin-left: 390px;
 }
 
 .text
 {
-	color: #555555;
-	font: 19px/32px Georgia;
+    color: #555555;
+    font: 19px/1.68421053 Georgia;
+}
+
+.text_1
+{
+    margin-top: -12px;
 }
 
 .main_text
 {
-	margin-left: 5px;
-	margin-top: 44px;	
+    margin-left: 5px;
+    margin-top: 230px;    
 }
 
 h2 
 {
-	margin-top: 60px;
-	color: #363636;
-	font: 500 35px/6.7px "Open Sans";
+    margin-top: 60px;
+    color: #363636;
+    font: 500 35px/0.19142857 "Open Sans";
 }
 
 .common_text 
 {
-	margin-left: 6px;
-	margin-top: 33px;
+    margin-left: 6px;
+    font: 19px/1.68421053 Georgia;
+    margin-top: 33px;
 }
 
 a
 {
-	color: #15a98b;
-	font: 19px/32px Georgia;	
-	text-decoration: none;
+    color: #15a98b;
+    font: 19px/1.68421053 Georgia;    
+    text-decoration: none;
 }
 
 .connect_link 
 {
-	margin-top: 42px;
-	margin-left: 5px;
-	float: left;
+    margin-top: 42px;
+    margin-left: 5px;
+    float: left;
 }
 
 .link
 {
-	text-decoration: underline;
-	display: inline-block;
+    text-decoration: underline;
+    display: inline-block;
 }
 
 .movies
 {
-	width: 1200px;
-	margin-left: 360px;
-	margin-top: 110px;
+    width: 1200px;
+    margin-left: 360px;
+    margin-top: 110px;
 }
 
 .movie
 {
-	margin-top: 45px;
-	width: 285px;
-	float: left;
-	margin-right: 20px;
+    margin-top: 45px;
+    width: 285px;
+    float: left;
+    margin-right: 20px;
 }
 
 .movie_last
 {
-	margin-top: 45px;
-	width: 285px;
-	float: left;
+    margin-top: 45px;
+    width: 285px;
+    float: left;
 }
 
 .movie_image
 {
-	border-radius: 5px;
-	width: 285px;
-	height: 190px;	
-	margin-top: 6px;
+    border-radius: 5px;
+    width: 285px;
+    height: 190px;    
+    margin-top: 6px;
 }
 
 .movie_name
 {
-	color: #333333;
-	margin-top: 20px;
-	margin-left: -2px;
-	font: 700 22px/32px "Open Sans";
+    color: #333333;
+    margin-top: 20px;
+    margin-left: -2px;
+    font: 700 22px/1.45454545 "Open Sans";
 }
 
 .movie_text
 {
-	width: 285px;
-	height: 565px;
-	color: #555555;
-	margin-top: 17px;
-	font: 16px/28px "Georgia";
+    width: 285px;
+    height: 565px;
+    color: #555555;
+    margin-top: 17px;
+    font: 16px/1.75 "Georgia";
 }
 
-.all_movie
+.button_all_movie
 {
-	border-radius: 5px;
-	margin-left: 479px;
-	margin-top: -9px; 
+    border-radius: 5px;
+    margin-left: 479px;
+    margin-top: -9px; 
+    width: 220px;
+    height: 50px;
+    background-color: #15a98c;
+}
+
+.button_all_movie:hover
+{
+    width: 220px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #098d71; 
+    margin-left: 479px;
+    margin-top: -9px;       
+}
+
+.button_all_movie_text
+{
+    color: #f5f5f5;
+    font: 19px/1.68421053 "Georgia";
+    margin-top: 3px;
 }
 
 footer
 {
-	background-color: #f5f5f5;
-	margin-top: 133px;
-	height: 70px;
-	
+    background-color: #f5f5f5;
+    margin-top: 140px;
+    height: 70px;
+    
 }
 
 .footer_text
 {
-	color: #555555;
-	vertical-align: middle;
-	text-align: center;
-	margin-top: -70px;
-	font: 16px/75px "Georgia";
+    color: #555555;
+    vertical-align: middle;
+    text-align: center;
+    margin-top: -70px;
+    font: 16px/4.6875 "Georgia";
 }
