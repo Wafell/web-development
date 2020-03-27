@@ -1,17 +1,17 @@
 <?php
 if ($_GET['email'] <> null)
 {
-    if (file_exists('data/'.$_GET['email'].'.txt'))
+    if (file_exists('data/' . $_GET['email'] . '.txt'))
     {
-        $profile = fopen('data/'.$_GET['email'].'.txt', 'r');
+        $profile = fopen('data/' . $_GET['email'] . '.txt', 'r');
         $data = fgets($profile);
-        echo substr($data, 0, strlen($data)).'<br/>';
+        echo substr($data, 0, strlen($data)) . '<br/>';
         $data = fgets($profile);
-        echo substr($data, 0, strlen($data)).'<br/>';
+        echo substr($data, 0, strlen($data)) . '<br/>';
         $data = fgets($profile);
-        echo substr($data, 0, strlen($data)).'<br/>';
+        echo substr($data, 0, strlen($data)) . '<br/>';
         $data = fgets($profile);
-        echo substr($data, 0, strlen($data)).'<br/>';
+        echo substr($data, 0, strlen($data)) . '<br/>';
         fclose($profile);
     }
     else
