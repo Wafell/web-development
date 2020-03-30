@@ -1,0 +1,40 @@
+PROGRAM TestReadDigit(INPUT, OUTPUT);
+VAR
+  D: INTEGER;
+PROCEDURE ReadDigit(VAR F: TEXT; VAR D: INTEGER);
+VAR
+  Ch: CHAR;
+  I: INTEGER;       
+BEGIN 
+  IF EOLN
+  THEN 
+    WRITELN
+  ELSE  
+    BEGIN
+      WHILE NOT EOLN
+      DO 
+        BEGIN
+          READ(Ch);
+          WHILE ((Ch >= '0') AND (Ch <= '9'))
+          DO
+            BEGIN
+              IF Ch = '0' THEN I := 0; 
+              IF Ch = '1' THEN I := 1; 
+              IF Ch = '2' THEN I := 2; 
+              IF Ch = '3' THEN I := 3; 
+              IF Ch = '4' THEN I := 4; 
+              IF Ch = '5' THEN I := 5; 
+              IF Ch = '6' THEN I := 6; 
+              IF Ch = '7' THEN I := 7; 
+              IF Ch = '8' THEN I := 8; 
+              IF Ch = '9' THEN I := 9; 
+              D := D + I;
+              READ(Ch)
+            END;
+          WRITELN(D)         
+        END;
+    END   
+END;  
+BEGIN
+  ReadDigit(INPUT, D)
+END.         
