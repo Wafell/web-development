@@ -32,7 +32,7 @@ BEGIN
               READ(Ch)
             END;
           WRITELN(D)         
-        END;
+        END
     END   
 END;  
 BEGIN
