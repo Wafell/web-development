@@ -4,22 +4,25 @@
       <meta charset="UTF-8" />
       <title>♥Gazizova Alina♥</title>
       <link href="css/style.css" rel="stylesheet" />
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans:500,600,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
     </head>
     <body>
       <div class="top_menu">
-        <button class="button_top_menu button_top_menu_1">
-          <img class="image_top_menu" src="images/about_me_icon.png" alt="">
-          <p class="top_menu_text">Обо мне</p>
-        </button>
-        <button class="button_top_menu button_top_menu_2">
-          <img class="image_top_menu image_top_menu_2" src="images/hobby_icon.png" alt="">
-          <p class="top_menu_text">Мое хобби</p>
-        </button>
-        <button class="button_top_menu button_top_menu_3">
-          <img class="image_top_menu image_top_menu_3" src="images/favorite_movies_icon.png " alt="">
-          <p class="top_menu_text">Любимые фильмы</p>
-        </button>
+        <div class="div_top_menu div_top_menu_1">
+          <a href="#me">
+            <span class="top_menu_text div_top_menu_1_icon">Обо мне</span>
+          </a>
+        </div>
+        <div class="div_top_menu div_top_menu_2">
+          <a href="#hobby">
+            <span class="top_menu_text div_top_menu_2_icon">Мое хобби</span>
+          </a>
+        </div>
+        <div class="div_top_menu div_top_menu_3">
+          <a href="#movie">
+            <span class="top_menu_text div_top_menu_3_icon">Любимые фильмы</span>
+          </a>
+        </div>
       </div>
       <div class="clear"></div>
       <div class="wrap_container_1">
@@ -54,7 +57,7 @@
           </ol>
         </div>      
         <div class="right_column">
-          <div class="text main_text">
+          <div id=me class="text main_text">
             <p class="text_1">
               "...На краю дороги стоял дуб. Он был, вероятно, в десять раз старше берез, составлявших лес, в десять раз толще и в два раза выше каждой березы. Это был огромный, в два обхвата дуб, с обломанными суками и корой, заросшей старыми болячками. С огромными, неуклюже, несимметрично растопыренными корявыми руками и пальцами, он старым, сердитым и презрительным уродом стоял между улыбающимися березами. Только он один не хотел подчиниться обаянию весны и не хотел видеть ни весны, ни солнца.
               Этот дуб как будто говорил: «Весна, и любовь, и счастье! И как не надоест вам все один и тот же глупый, бессмысленный обман! Все одно и то же, и все обман! Нет ни весны, ни солнца, ни счастья. Вон смотрите, сидят задавленные мертвые ели, всегда одинокие, и вон я растопырил свои обломанные, ободранные пальцы, выросшие из спины, из боков — где попало. Как выросли — так и стою, и не верю вашим надеждам и обманам».
@@ -62,7 +65,7 @@
             </p>
           </div>
           <h2>Мое хобби</h2>
-          <div class="text common_text">
+          <div id=hobby class="text common_text">
             <p>
               Встреча князя Андрея Болконского с дубом♥
             </p>
@@ -75,7 +78,7 @@
         </div>
       </div>
       <div class="clear"></div> 
-        <div class="movies">
+        <div id=movie class="movies">
           <h2>Любимые фильмы</h2>
           <div class="movie">
             <img class="movie_image" src="images/movie_one.png" alt="">
@@ -106,7 +109,7 @@
             </p> 
           </div>
           <button class="button_all_movie">
-            <p class="button_all_movie_text">Все фильмы</p>
+            <span class="button_all_movie_text">Все фильмы</span>
           </button>
         </div>   
     <div class="clear"></div> 
