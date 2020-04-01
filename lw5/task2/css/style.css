@@ -11,56 +11,71 @@ body
     background-position-y: 50px;
 }
 
-.button_top_menu
+.div_top_menu
 {
     height: 50px;
     background-color: #fff;
     border: 0px;
-    filter: brightness(100%)
+    filter: brightness(100%);
+    float: left;
 }
 
-.button_top_menu:hover
+.div_top_menu a
+{
+	display: block;
+    height: 100%
+}
+
+.div_top_menu a .href
+{
+    display: block;
+    height: 100%
+}
+
+.div_top_menu:hover
 {
     height: 50px;
     border: 0px;
     background-color: #15a98c;
 }
 
-.button_top_menu_1
+.div_top_menu_1
 {
-    width: 140px;
+    width: 140px; 
 }
 
-.button_top_menu_2
+.div_top_menu_1_icon:before
 {
-    width: 150px;
+    content: url("../images/about_me_icon.png");
+    float: left;
+    margin-right: 10px;
+    margin-left: 21px;
 }
 
-.button_top_menu_3
+.div_top_menu_2
+{
+    width: 160px;
+}
+
+.div_top_menu_2_icon:before
+{
+    content: url("../images/hobby_icon.png");
+    float: left;
+    margin-right: 10px;
+    margin-left: 21px;
+}
+
+.div_top_menu_3
 {
     width: 240px;
 }
 
-.image_top_menu
+.div_top_menu_3_icon:before
 {
-    height: 16px;
-    width: 16px;
+    content: url("../images/favorite_movies_icon.png");
     float: left;
-    margin-left: 20px;
-    margin-top: 8px;
-    margin-right: -10px;
-}
-
-.image_top_menu_2
-{
-    margin-left: 15px;
-    margin-right: -1px;
-}
-
-.image_top_menu_3
-{
-    margin-left: 22px;
-    margin-right: -12px;
+    margin-right: 10px;
+    margin-left: 21px;
 }
 
 .top_menu
@@ -71,25 +86,31 @@ body
 
 .top_menu_text
 {
-    font: 19px/1.68421053 "Georgia"; 
+    font: 19px/1.68 "Georgia"; 
     color: #464646;
+    margin-top: 10px;
 }
 
-.top_menu_text_1
+.div_top_menu:hover .top_menu_text
 {
-    margin-left: 
-}
-
-.button_top_menu:hover .top_menu_text
-{
-    font: 19px/1.68421053 "Georgia"; 
+    font: 19px/1.68 "Georgia"; 
     color: #fff;
 }
 
-.button_top_menu:hover .image_top_menu
+.div_top_menu:hover .div_top_menu_1_icon
 {
     filter: brightness(10);
 }    
+
+.div_top_menu:hover .div_top_menu_2_icon
+{
+    filter: brightness(10);
+}   
+
+.div_top_menu:hover .div_top_menu_3_icon
+{
+    filter: brightness(10);
+}
 
 .wrap_container_1
 {
@@ -136,7 +157,7 @@ cite
     margin-top: 60px;
     margin-left: 6px;
     color: #ffffff;
-    font: 600 16px/2.625 "Open Sans", sans-serif;
+    font: 600 16px/2.63 "Open Sans", sans-serif;
     margin-bottom: 100px; 
 }
 
@@ -186,7 +207,7 @@ li
     color: #555555;
     margin-top: 14px;
     margin-left: 2px;
-    font: 400 19px/1.15789474 Georgia;
+    font: 400 19px/1.16 Georgia;
 }
 
 .right_column 
@@ -204,7 +225,7 @@ h1
     margin-left: 390px;
     margin-bottom: 25px;
     color: #333333;
-    font: 700 48px/0.875 "Open Sans";
+    font: 700 48px/0.88 "Open Sans";
 }
 
 .splitter 
@@ -220,7 +241,7 @@ h1
 .text
 {
     color: #555555;
-    font: 19px/1.68421053 Georgia;
+    font: 19px/1.68 Georgia;
 }
 
 .text_1
@@ -238,21 +259,22 @@ h2
 {
     margin-top: 60px;
     color: #363636;
-    font: 500 35px/0.19142857 "Open Sans";
+    font: 400 35px/0.19 "Open Sans";
 }
 
 .common_text 
 {
     margin-left: 6px;
-    font: 19px/1.68421053 Georgia;
+    font: 19px/1.68 Georgia;
     margin-top: 33px;
 }
 
 a
 {
     color: #15a98b;
-    font: 19px/1.68421053 Georgia;    
+    font: 19px/1.68 Georgia;    
     text-decoration: none;
+    margin-top: 10px;
 }
 
 .connect_link 
@@ -303,7 +325,7 @@ a
     color: #333333;
     margin-top: 20px;
     margin-left: -2px;
-    font: 700 22px/1.45454545 "Open Sans";
+    font: 700 22px/1.45 "Open Sans";
 }
 
 .movie_text
@@ -338,7 +360,7 @@ a
 .button_all_movie_text
 {
     color: #f5f5f5;
-    font: 19px/1.68421053 "Georgia";
+    font: 19px/1.68 "Georgia";
     margin-top: 3px;
 }
 
@@ -351,10 +373,10 @@ footer
 }
 
 .footer_text
-{
+{    
     color: #555555;
     vertical-align: middle;
     text-align: center;
     margin-top: -70px;
-    font: 16px/4.6875 "Georgia";
+    font: 16px/4.69 "Georgia";
 }
