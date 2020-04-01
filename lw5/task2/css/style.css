@@ -22,7 +22,7 @@ body
 
 .div_top_menu a
 {
-	display: block;
+    display: block;
     height: 100%
 }
 
@@ -215,8 +215,7 @@ li
     float: left;
     margin-left: 55px;
     margin-top: -210px;
-    width: 600px;
-    
+    width: 600px;   
 }
 
 h1 
