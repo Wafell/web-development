@@ -117,15 +117,15 @@
     <div class="clear"></div>
     <div class="div_form">
       <div class="line line_right"></div>
-      <span class="name_div_form">НАПИШИ МНЕ</span>
+      <h2 class="name_div_form">Напиши мне</h2>
       <div class="line line_left"></div> 
       <div class="clear"></div>
       <a id="form"></a>
-      <form method="get" action="php/task2.php">
-        <p class="name_form">Ваше имя<span class="necessarily"> *</span></p>
+      <form method="get" action="php/task3.php">
+        <span class="field_name">Ваше имя<span class="necessarily"> *</span></span>
         <input class="form_area" type="text" name="first_name" value="" required /> 
-        <p class="name_form">Ваш email<span class="necessarily"> *</span></p>
-        <input class="form_area" type="email" name="email" required /><p class="name_form">Откуда вы?</p>
+        <span class="field_name">Ваш email<span class="necessarily"> *</span></span>
+        <input class="form_area" type="email" name="email" required /><span class="field_name">Откуда вы?</span>
         <select class="form_area_select" name="where_are">
           <option class="select_text" value="Американия">Американия</option> 
           <option class="select_text" value="Россия">Россия</option>
@@ -133,12 +133,12 @@
           <option class="select_text" value="Украiна">Украiна</option>
           <option class="select_text" selected value="Я человек мира">Я человек мира</option>
         </select>
-        <p class="name_form">Ваш пол</p>
-        <input class="radio" type="radio" name="gender" value="мужской" checked />
-        <label class="label_text">Мужской</label>
-        <input type="radio" name="gender" value="женский" />
-        <label class="label_text">Женский</label> 
-        <p class="name_form">Ваше сообщение<span class="necessarily"> *</span></p>
+        <span class="field_name">Ваш пол</span><br>
+        <input class="radio" type="radio" name="gender" value="мужской" id="radio1" checked />
+        <label class="label_text" for="radio1">Мужской</label>
+        <input type="radio" name="gender" value="женский" id="radio2"/>
+        <label class="label_text" for="radio2">Женский</label><br> 
+        <span class="field_name">Ваше сообщение<span class="necessarily"> *</span></span>
         <textarea class="textarea_area" name="your_message" required></textarea> 
         <input class="send" type="submit" value="Отправить" />
       </form>  
