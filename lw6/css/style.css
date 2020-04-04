@@ -398,10 +398,11 @@ a
 .name_div_form
 {
     color: #333333;
-    /*margin-left: 831px;*/
     font: 300 36px/1.2 "Open Sans";
     float: left;
     margin-left: 28px;
+    text-transform: uppercase;
+    margin-top: 0px;
 }
 
 .line_left
@@ -419,12 +420,15 @@ form
 .form_area
 {
     width: 537px;
-    height: 47px;
+    height: 46px;
     color: #555555;
     font: 400 18px/1.78 "Open Sans";
     border-radius: 3px;
     text-indent: 20px;
     border: 2px solid #c9c9c9;
+    margin-bottom: 23px;
+    margin-top: 4px;
+
 }
 
 .form_area:focus
@@ -439,7 +443,8 @@ form
     color: #555555;
     font: 400 18px/1.78 "Open Sans";
     border-radius: 3px;  
-    margin-bottom: 17px;
+    margin-bottom: 40px;
+    margin-top: 5px;
     text-indent: 15px;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -461,17 +466,19 @@ form
     font: 400 18px/1.78 "Open Sans";
 }
 
-.name_form
+.field_name
 {
     color: #333333;
     font: 400 20px/1.6 "Open Sans";
     margin-top: 25px;
     margin-bottom: 2px;
+    clear: left;
 }
 
 .radio
 {
-    margin-bottom: 22px;
+    margin-bottom: 44px;
+    margin-top: 15px;
 }
 
 .label_text
@@ -485,10 +492,11 @@ form
 .textarea_area
 {
     width: 538px;
-    height: 150px;
+    height: 147px;
     border-radius: 3px;
     resize: none;
     margin-bottom: 45px;
+    margin-top: 4px;
     border: 2px solid #c9c9c9;
     text-indent: 20px;
     font: 400 18px/1.78 "Open Sans";
