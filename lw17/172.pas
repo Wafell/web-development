@@ -16,14 +16,14 @@ BEGIN
   IF Ch = '9' THEN N := 9;
   IF I < 3276
   THEN
-    I := I*10 + N 
+    I := I * 10 + N 
   ELSE
     IF I = 3276
     THEN
       BEGIN
         IF N <= 7
         THEN
-          I := I*10 + N
+          I := I * 10 + N
         ELSE
           I := -1   
       END 
@@ -40,18 +40,14 @@ BEGIN
     BEGIN
       D := 1;
       I := 0;
-      IF (NOT EOLN) 
-      THEN
+      READ(Ch);
+      WHILE (Ch >= '0') AND (Ch <= '9')
+      DO
         BEGIN
-          READ(Ch);
-          WHILE (Ch >= '0') AND (Ch <= '9') 
-          DO
-            BEGIN
-              D := D + 1;
-              ReadNumber(INPUT, N);
-              READ(Ch)       
-            END  
-        END;
+          D := D + 1;
+          ReadNumber(INPUT, N);
+          READ(Ch)       
+        END;  
       IF D >= 7
       THEN
         I := -1;   
