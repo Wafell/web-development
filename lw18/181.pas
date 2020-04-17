@@ -9,17 +9,19 @@ VAR
   Student: 1 .. ClassSize;
   NextScore: Score;
   Ave, TotalScore, ClassTotal: INTEGER;
+  InputError: CHAR;
 BEGIN {AverageScore}
+  InputError := '1';
   ClassTotal := 0;
   WRITELN('Student averages:');
   Student := 1;
-  WHILE Student <= ClassSize
+  WHILE (Student <= ClassSize) AND (InputError <> '2')
   DO 
     BEGIN
       Student := Student + 1;
       TotalScore := 0;
       WhichScore := 1;
-      WHILE WhichScore <= NumberOfScores
+      WHILE (WhichScore <= NumberOfScores) AND (InputError <> '2')
       DO
         BEGIN
           IF NOT EOLN
@@ -28,8 +30,13 @@ BEGIN {AverageScore}
               READ(NextScore);
               TotalScore := TotalScore + NextScore;
               WhichScore := WhichScore + 1
-            END  
+            END
+          ELSE
+            InputError := '2'    
         END;
+      IF InputError = '2'
+      THEN
+        WRITELN('Ошибка ввода данных');  
       READLN;    
       TotalScore := TotalScore * 10;
       Ave := TotalScore DIV NumberOfScores;
@@ -42,6 +49,6 @@ BEGIN {AverageScore}
     END;
   WRITELN;
   WRITELN ('Class average:');
-  ClassTotal := ClassTotal DIV (ClassSize *NumberOfScores);
+  ClassTotal := ClassTotal DIV (ClassSize * NumberOfScores);
   WRITELN(ClassTotal DIV 10, '.', ClassTotal MOD 10:1)
 END.  {AverageScore}
