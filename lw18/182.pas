@@ -62,7 +62,7 @@ BEGIN {AverageScore}
         WRITELN('ERROR'); 
       IF Error = '2'
       THEN
-        WRITELN('Äàííûå ââåäåíû íåâåðíî');
+        WRITELN('Data entry error');
       IF Error = '1' 
       THEN
         BEGIN      
