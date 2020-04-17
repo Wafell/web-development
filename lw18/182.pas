@@ -5,7 +5,7 @@ CONST
 TYPE
   Score = 0 .. 100;
 VAR
-  Error, Ch: CHAR;
+  Error, InputError, Ch: CHAR;
   WhichScore: 1 .. NumberOfScores;
   Student: 1 .. ClassSize;
   NextScore: Score;
@@ -15,14 +15,18 @@ BEGIN {AverageScore}
   WRITELN('Student averages:');
   Student := 1;
   Error := '1';
-  WHILE (Student <= ClassSize) AND (Error = '1')
+  InputError := '1';
+  WHILE (Student <= ClassSize) AND (Error = '1') AND (InputError = '1') 
   DO 
     BEGIN
       Student := Student + 1;
       TotalScore := 0;
       WhichScore := 1;
       Ch := '1';
-      WHILE Ch <> ' '
+      IF EOLN
+      THEN
+        InputError := '2';
+      WHILE (Ch <> ' ') AND (InputError = '1')
       DO
         BEGIN
           IF NOT EOLN
@@ -30,9 +34,9 @@ BEGIN {AverageScore}
             BEGIN
               READ(Ch);
               WRITE(Ch)
-            END
+            END 
         END;
-      WHILE (WhichScore <= NumberOfScores) 
+      WHILE (WhichScore <= NumberOfScores) AND (Error = '1') AND (InputError = '1')  
       DO
         BEGIN
           IF NOT EOLN
@@ -47,15 +51,19 @@ BEGIN {AverageScore}
                 END
               ELSE
                 BEGIN
-                  Error := '2';
-                  WhichScore := WhichScore + 1  
+                  Error := '2'  
                 END  
-            END  
+            END 
+          ELSE
+            InputError := '2'   
         END;
+      IF InputError = '2' 
+      THEN 
+        WRITELN('ERROR'); 
       IF Error = '2'
       THEN
-        WRITELN('Данные введены неверно');
-      IF Error = '1'
+        WRITELN('Äàííûå ââåäåíû íåâåðíî');
+      IF Error = '1' 
       THEN
         BEGIN      
           READLN;    
@@ -74,7 +82,7 @@ BEGIN {AverageScore}
     BEGIN   
       WRITELN;
       WRITELN ('Class average:');
-      ClassTotal := ClassTotal DIV (ClassSize *NumberOfScores);
+      ClassTotal := ClassTotal DIV (ClassSize * NumberOfScores);
       WRITELN(ClassTotal DIV 10, '.', ClassTotal MOD 10:1)
     END
 END.  {AverageScore}
