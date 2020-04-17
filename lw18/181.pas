@@ -15,13 +15,13 @@ BEGIN {AverageScore}
   ClassTotal := 0;
   WRITELN('Student averages:');
   Student := 1;
-  WHILE (Student <= ClassSize) AND (InputError <> '2')
+  WHILE (Student <= ClassSize) AND (InputError = '1')
   DO 
     BEGIN
       Student := Student + 1;
       TotalScore := 0;
       WhichScore := 1;
-      WHILE (WhichScore <= NumberOfScores) AND (InputError <> '2')
+      WHILE (WhichScore <= NumberOfScores) AND (InputError = '1')
       DO
         BEGIN
           IF NOT EOLN
@@ -36,7 +36,7 @@ BEGIN {AverageScore}
         END;
       IF InputError = '2'
       THEN
-        WRITELN('Ошибка ввода данных');  
+        WRITELN('ОШИБКА ВВОДА ДАННЫХ');  
       READLN;    
       TotalScore := TotalScore * 10;
       Ave := TotalScore DIV NumberOfScores;
