@@ -17,23 +17,20 @@ BEGIN
   IF Ch = '9' THEN D := 9  
 END;  
 BEGIN
+  I := 0;
   IF EOLN
   THEN
     WRITELN
   ELSE
     BEGIN
-      IF (NOT EOLN) 
-      THEN
-        BEGIN
-          READ(Ch);
-          WHILE (Ch >= '0') AND (Ch <= '9') 
-          DO
-            BEGIN 
-              ReadDigit(INPUT, D);
-              I := I + D;
-              READ(Ch)
-            END  
-        END;   
+      READ(Ch);
+      WHILE (Ch >= '0') AND (Ch <= '9') 
+      DO
+        BEGIN 
+          ReadDigit(INPUT, D);
+          I := I + D;
+          READ(Ch)
+        END;    
       WRITELN(I)
    END      
 END.         
