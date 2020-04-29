@@ -1,8 +1,7 @@
 PROGRAM Stat(INPUT, OUTPUT);
 VAR
-  D, I, N, CountNum, Sum, Average, Min, Max: INTEGER;
-  Ch: CHAR;
-  FInt: TEXT;
+  I, N, CountNum, Sum, Average, Min, Max: INTEGER;
+  Ch, Over: CHAR;
 PROCEDURE ReadNumber(VAR F: TEXT; VAR N: INTEGER);       
 BEGIN  
   IF Ch = '0' THEN N := 0; 
@@ -17,26 +16,34 @@ BEGIN
   IF Ch = '9' THEN N := 9;
   IF I < 3276
   THEN
-    I := I*10 + N 
+    I := I * 10 + N 
   ELSE
     IF I = 3276
     THEN
       BEGIN
         IF N <= 7
         THEN
-          I := I*10 + N
+          I := I * 10 + N
         ELSE
-          I := -1   
+          BEGIN
+            I := -1;
+            Over := '2'
+          END   
       END 
     ELSE
       IF I > 3276
       THEN
-        I := -1                                          
+        BEGIN
+          I := -1;
+          Over := '2'
+        END                                              
 END;  
 BEGIN
   Sum := 0;
   Min := 32767;
   Max := 0;
+  I := 0;
+  Over := '1';
   IF EOLN
   THEN
     WRITELN
@@ -46,40 +53,44 @@ BEGIN
       DO 
         BEGIN
           READ(Ch);
-          WHILE Ch <> ' '
+          WHILE (Ch <> ' ') 
           DO 
             BEGIN 
               I := 0;  
-              WHILE (Ch >= '0') AND (Ch <= '9')
+              WHILE (Ch >= '0') AND (Ch <= '9') AND (I <> -1)
               DO
                 BEGIN
                   ReadNumber(INPUT, N);
-                  READ(Ch)
+                  IF NOT EOLN
+                  THEN
+                    READ(Ch)
+                  ELSE
+                    Ch := ' '
                 END;
-                IF I <= 32767
+                IF (I <= 32767) AND (I <> -1)
                 THEN
                   BEGIN
-                    IF Min > I
+                    IF Min >= I
                     THEN
                       Min := I;
-                    IF Max < I
+                    IF Max <= I
                     THEN
                       Max := I
                   END
                 ELSE
                   WRITELN('Переполнение');          
                 Sum := Sum + I
-             END;
-             IF Sum > 32767
-             THEN
-               BEGIN 
-                 Sum := 0;
-                 WRITELN('Переполнение')
-               END;     
+            END;
+            IF Sum > 32767
+            THEN
+              BEGIN 
+                Over := '2';
+                WRITELN('Переполнение')
+              END;           
           CountNum := CountNum + 1    
-        END;
+        END
     END;
-  IF Sum > 0
+  IF Over = '1'
   THEN
     BEGIN
       Average := (Sum * 10) DIV CountNum;
