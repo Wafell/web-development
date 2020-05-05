@@ -1,9 +1,9 @@
 PROGRAM Prime(INPUT, OUTPUT);
 VAR
-  Sieve: SET OF 2..100; 
+  Sieve: SET OF 2 .. 100; 
   Number, Count, CountMax, NumberMax: INTEGER;
 BEGIN
-  Sieve := [2..100];
+  Sieve := [2 .. 100];
   Count := 2;
   CountMax := 100;
   NumberMax := 100;
@@ -32,5 +32,3 @@ BEGIN
         CountMax := CountMax - 1    
     END
 END.      
-  
-       
