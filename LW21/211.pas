@@ -1,6 +1,4 @@
 PROGRAM Encryption(INPUT, OUTPUT);
-{Переводит символы из INPUT в код согласно Chiper 
-  и печатает новые символы в OUTPUT}
 CONST
   Len = 20;
 TYPE
@@ -10,9 +8,7 @@ VAR
   Msg: Str;
   Code: Chiper;
   I: INTEGER;
- 
 PROCEDURE Initialize(VAR Code: Chiper);
-{Присвоить Code шифр замены}
 BEGIN {Initialize}
   Code['A'] := 'Z';
   Code['B'] := 'Y';
@@ -41,10 +37,8 @@ BEGIN {Initialize}
   Code['Y'] := 'B';
   Code['Z'] := 'A';
   Code[' '] := '%';
-END;  {Initialize}
- 
+END;  {Initialize} 
 PROCEDURE Encode(VAR S: Str);
-{Выводит символы из Code, соответствующие символам из S}
 VAR
   Index: 1 .. Len;
 BEGIN {Encode}
@@ -56,15 +50,12 @@ BEGIN {Encode}
     ELSE
       WRITE(S[Index]);
   WRITELN
-END;  {Encode}
- 
+END;  {Encode} 
 BEGIN {Encryption}
-  {Инициализировать Code}
   Initialize(Code);
   WHILE NOT EOF
   DO
     BEGIN
-      {читать строку в Msg и распечатать ее}
       I := 0;
       WHILE NOT EOLN AND (I < Len)
       DO
