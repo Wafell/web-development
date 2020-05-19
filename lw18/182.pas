@@ -2,21 +2,23 @@ PROGRAM AverageScore(INPUT, OUTPUT);
 CONST
   NumberOfScores = 4;
   ClassSize = 4;
+  MinMark = 0;
+  MaxMark = 100;
 TYPE
   Score = 0 .. 100;
 VAR
-  Error, InputError, Ch: CHAR;
+  Ch: CHAR;
+  Error: BOOLEAN;
   WhichScore: 1 .. NumberOfScores;
-  Student: 1 .. ClassSize;
+  Student: 0 .. ClassSize;
   NextScore: Score;
   Ave, TotalScore, ClassTotal: INTEGER;
 BEGIN {AverageScore}
   ClassTotal := 0;
   WRITELN('Student averages:');
-  Student := 1;
-  Error := '1';
-  InputError := '1';
-  WHILE (Student <= ClassSize) AND (Error = '1') AND (InputError = '1') 
+  Student := 0;
+  Error := FALSE;
+  WHILE (Student < ClassSize) AND (NOT Error) 
   DO 
     BEGIN
       Student := Student + 1;
@@ -25,8 +27,8 @@ BEGIN {AverageScore}
       Ch := '1';
       IF EOLN
       THEN
-        InputError := '2';
-      WHILE (Ch <> ' ') AND (InputError = '1')
+        Error := TRUE;
+      WHILE (Ch <> ' ') AND (NOT Error)
       DO
         BEGIN
           IF NOT EOLN
@@ -36,14 +38,14 @@ BEGIN {AverageScore}
               WRITE(Ch)
             END 
         END;
-      WHILE (WhichScore <= NumberOfScores) AND (Error = '1') AND (InputError = '1')  
+      WHILE (WhichScore <= NumberOfScores) AND (NOT Error)  
       DO
         BEGIN
           IF NOT EOLN
           THEN
             BEGIN
               READ(NextScore);
-              IF (NextScore >= 0) AND (NextScore <= 100)  
+              IF (NextScore >= MinMark) AND (NextScore <= MaxMark)  
               THEN
                 BEGIN
                   TotalScore := TotalScore + NextScore;
@@ -51,19 +53,13 @@ BEGIN {AverageScore}
                 END
               ELSE
                 BEGIN
-                  Error := '2'  
+                  Error := TRUE  
                 END  
             END 
           ELSE
-            InputError := '2'   
+            Error := TRUE   
         END;
-      IF InputError = '2' 
-      THEN 
-        WRITELN('ERROR'); 
-      IF Error = '2'
-      THEN
-        WRITELN('Data entry error');
-      IF Error = '1' 
+      IF NOT Error  
       THEN
         BEGIN      
           READLN;    
@@ -77,7 +73,7 @@ BEGIN {AverageScore}
           ClassTotal := ClassTotal + TotalScore
         END
     END;
-  IF Error = '1'
+  IF NOT Error 
   THEN
     BEGIN   
       WRITELN;
@@ -85,4 +81,9 @@ BEGIN {AverageScore}
       ClassTotal := ClassTotal DIV (ClassSize * NumberOfScores);
       WRITELN(ClassTotal DIV 10, '.', ClassTotal MOD 10:1)
     END
+  ELSE
+    BEGIN
+      WRITELN;
+      WRITELN('INPUT ERROR')
+    END    
 END.  {AverageScore}
