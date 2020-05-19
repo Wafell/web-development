@@ -6,22 +6,22 @@ TYPE
   Score = 0 .. 100;
 VAR
   WhichScore: 1 .. NumberOfScores;
-  Student: 1 .. ClassSize;
+  Student: 0 .. ClassSize;
   NextScore: Score;
   Ave, TotalScore, ClassTotal: INTEGER;
-  InputError: CHAR;
+  InputError: BOOLEAN;
 BEGIN {AverageScore}
-  InputError := '1';
+  InputError := FALSE;
   ClassTotal := 0;
   WRITELN('Student averages:');
-  Student := 1;
-  WHILE (Student <= ClassSize) AND (InputError = '1')
+  Student := 0;
+  WHILE (Student < ClassSize) AND (NOT InputError)
   DO 
     BEGIN
       Student := Student + 1;
       TotalScore := 0;
       WhichScore := 1;
-      WHILE (WhichScore <= NumberOfScores) AND (InputError = '1')
+      WHILE (WhichScore <= NumberOfScores) AND (NOT InputError)
       DO
         BEGIN
           IF NOT EOLN
@@ -32,11 +32,8 @@ BEGIN {AverageScore}
               WhichScore := WhichScore + 1
             END
           ELSE
-            InputError := '2'    
-        END;
-      IF InputError = '2'
-      THEN
-        WRITELN('ОШИБКА ВВОДА ДАННЫХ');  
+            InputError := TRUE    
+        END; 
       READLN;    
       TotalScore := TotalScore * 10;
       Ave := TotalScore DIV NumberOfScores;
@@ -48,7 +45,13 @@ BEGIN {AverageScore}
       ClassTotal := ClassTotal + TotalScore
     END;
   WRITELN;
-  WRITELN ('Class average:');
-  ClassTotal := ClassTotal DIV (ClassSize * NumberOfScores);
-  WRITELN(ClassTotal DIV 10, '.', ClassTotal MOD 10:1)
+  IF NOT InputError
+  THEN 
+    BEGIN
+      WRITELN ('Class average:');
+      ClassTotal := ClassTotal DIV (ClassSize * NumberOfScores);
+      WRITELN(ClassTotal DIV 10, '.', ClassTotal MOD 10:1)
+    END  
+  ELSE
+    WRITELN('INPUT ERROR')    
 END.  {AverageScore}
