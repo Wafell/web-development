@@ -8,6 +8,7 @@ VAR
   Msg: Str;
   Code: Chiper;
   I: INTEGER;
+ 
 PROCEDURE Initialize(VAR Code: Chiper);
 BEGIN {Initialize}
   Code['A'] := 'Z';
@@ -37,7 +38,8 @@ BEGIN {Initialize}
   Code['Y'] := 'B';
   Code['Z'] := 'A';
   Code[' '] := '%';
-END;  {Initialize} 
+END;  {Initialize}
+ 
 PROCEDURE Encode(VAR S: Str);
 VAR
   Index: 1 .. Len;
@@ -50,8 +52,10 @@ BEGIN {Encode}
     ELSE
       WRITE(S[Index]);
   WRITELN
-END;  {Encode} 
+END;  {Encode}
+ 
 BEGIN {Encryption}
+  {Èíèöèàëèçèðîâàòü Code}
   Initialize(Code);
   WHILE NOT EOF
   DO
@@ -61,12 +65,9 @@ BEGIN {Encryption}
       DO
         BEGIN
           I := I + 1;
-          READ(Msg[I]);
-          WRITE(Msg[I])
+          READ(Msg[I])
         END;
       READLN;
-      WRITELN;
       Encode(Msg)
     END
 END.  {Encryption}
-
