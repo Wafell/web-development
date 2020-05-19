@@ -1,20 +1,23 @@
 PROGRAM Prime(INPUT, OUTPUT);
+CONST
+  StarValue = 2;
+  FinalValue = 100;
 VAR
-  Sieve: SET OF 2 .. 100; 
+  Sieve: SET OF StarValue .. FinalValue; 
   Number, Count, CountMax, NumberMax: INTEGER;
 BEGIN
-  Sieve := [2 .. 100];
-  Count := 2;
-  CountMax := 100;
-  NumberMax := 100;
-  WHILE Count <= CountMax
+  Sieve := [StarValue .. FinalValue];
+  Count := StarValue;
+  CountMax := FinalValue;
+  NumberMax := FinalValue;
+  WHILE Count < CountMax
   DO 
     BEGIN
       IF (Count IN Sieve)
       THEN
         BEGIN 
           Number := Count;
-          WHILE Number <= NumberMax
+          WHILE Number < NumberMax
           DO
             BEGIN  
               IF (Number IN Sieve) AND (Number MOD Count = 0)
