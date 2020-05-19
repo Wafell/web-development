@@ -4,12 +4,11 @@ CONST
   FinalValue = 100;
 VAR
   Sieve: SET OF StarValue .. FinalValue; 
-  Number, Count, CountMax, NumberMax: INTEGER;
+  Number, Count, CountMax: INTEGER;
 BEGIN
   Sieve := [StarValue .. FinalValue];
   Count := StarValue;
   CountMax := FinalValue;
-  NumberMax := FinalValue;
   WHILE Count < CountMax
   DO 
     BEGIN
@@ -17,7 +16,7 @@ BEGIN
       THEN
         BEGIN 
           Number := Count;
-          WHILE Number < NumberMax
+          WHILE Number < FinalValue
           DO
             BEGIN  
               IF (Number IN Sieve) AND (Number MOD Count = 0)
@@ -34,4 +33,4 @@ BEGIN
       DO
         CountMax := CountMax - 1    
     END
-END.      
+END.     
