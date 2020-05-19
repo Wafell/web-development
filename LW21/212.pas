@@ -12,7 +12,7 @@ VAR
   I, Count: INTEGER;
   CodeFile: TEXT;    
   FileError: BOOLEAN; 
-PROCEDURE ReadInitialize(VAR CodeFile: TEXT; VAR Code: Chiper);
+PROCEDURE ReadInitialize(VAR CodeFile: TEXT; VAR Code: Chiper; VAR FileError: BOOLEAN);
 VAR
   Ch, ChCode: CHAR;
 BEGIN   
@@ -25,7 +25,11 @@ BEGIN
       THEN
         BEGIN
           READ(CodeFile, ChCode);
-          Code[Ch] := ChCode
+          IF ChCode IN Valid
+          THEN 
+            Code[Ch] := ChCode
+          ELSE
+            FileError := TRUE  
         END
       ELSE
         FileError := TRUE;   
@@ -35,8 +39,9 @@ END;
 PROCEDURE Encode(VAR S: Str; Code: Chiper; Count: INTEGER);
 VAR
   Index: 1 .. Len;
-BEGIN     
-  FOR Index := 1 TO Len
+BEGIN 
+WRITELN(Count);    
+  FOR Index := 1 TO Count
   DO                    
     IF S[Index] IN CodeArr
     THEN
@@ -48,7 +53,7 @@ END;
 BEGIN 
   ASSIGN(CodeFile, 'Code.txt');
   RESET(CodeFile);
-  ReadInitialize(CodeFile, Code);
+  ReadInitialize(CodeFile, Code, FileError);
   CLOSE(CodeFile);
   IF NOT FileError
   THEN
@@ -57,7 +62,7 @@ BEGIN
       DO
         BEGIN
           I := 1;
-          Count := 1;
+          Count := 0;
           WHILE (NOT EOLN) AND (I <= Len)  
           DO
             BEGIN
@@ -74,4 +79,3 @@ BEGIN
   ELSE
     WRITELN('FILE ERROR')    
 END.  
-
