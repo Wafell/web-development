@@ -39,8 +39,7 @@ END;
 PROCEDURE Encode(VAR S: Str; Code: Chiper; Count: INTEGER);
 VAR
   Index: 1 .. Len;
-BEGIN 
-WRITELN(Count);    
+BEGIN     
   FOR Index := 1 TO Count
   DO                    
     IF S[Index] IN CodeArr
