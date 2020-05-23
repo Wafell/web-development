@@ -5,7 +5,7 @@ CONST
 TYPE
   Score = 0 .. 100;
 VAR
-  WhichScore: 1 .. NumberOfScores;
+  WhichScore: 0 .. NumberOfScores;
   Student: 0 .. ClassSize;
   NextScore: Score;
   Ave, TotalScore, ClassTotal: INTEGER;
@@ -20,8 +20,8 @@ BEGIN {AverageScore}
     BEGIN
       Student := Student + 1;
       TotalScore := 0;
-      WhichScore := 1;
-      WHILE (WhichScore <= NumberOfScores) AND (NOT InputError)
+      WhichScore := 0;
+      WHILE (WhichScore < NumberOfScores) AND (NOT InputError)
       DO
         BEGIN
           IF NOT EOLN
@@ -53,5 +53,5 @@ BEGIN {AverageScore}
       WRITELN(ClassTotal DIV 10, '.', ClassTotal MOD 10:1)
     END  
   ELSE
-    WRITELN('INPUT ERROR')    
+    WRITELN('Ошибка ввода данных')    
 END.  {AverageScore}
