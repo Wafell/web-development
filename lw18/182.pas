@@ -9,7 +9,7 @@ TYPE
 VAR
   Ch: CHAR;
   Error: BOOLEAN;
-  WhichScore: 1 .. NumberOfScores;
+  WhichScore: 0 .. NumberOfScores;
   Student: 0 .. ClassSize;
   NextScore: Score;
   Ave, TotalScore, ClassTotal: INTEGER;
@@ -23,7 +23,7 @@ BEGIN {AverageScore}
     BEGIN
       Student := Student + 1;
       TotalScore := 0;
-      WhichScore := 1;
+      WhichScore := 0;
       Ch := '1';
       IF EOLN
       THEN
@@ -38,7 +38,7 @@ BEGIN {AverageScore}
               WRITE(Ch)
             END 
         END;
-      WHILE (WhichScore <= NumberOfScores) AND (NOT Error)  
+      WHILE (WhichScore < NumberOfScores) AND (NOT Error)  
       DO
         BEGIN
           IF NOT EOLN
