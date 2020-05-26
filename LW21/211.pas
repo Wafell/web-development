@@ -1,16 +1,17 @@
 PROGRAM Encryption(INPUT, OUTPUT);
 CONST
   Len = 20;
+  CodeArr = [' ', 'A' .. 'Z'];
 TYPE
   Str = ARRAY [1 .. Len] OF ' ' .. 'Z';
   Chiper = ARRAY [' ' .. 'Z'] OF CHAR;
 VAR
   Msg: Str;
   Code: Chiper;
-  I: INTEGER;
+  I, Count: INTEGER;
  
 PROCEDURE Initialize(VAR Code: Chiper);
-BEGIN {Initialize}
+BEGIN 
   Code['A'] := 'Z';
   Code['B'] := 'Y';
   Code['C'] := 'X';
@@ -38,36 +39,39 @@ BEGIN {Initialize}
   Code['Y'] := 'B';
   Code['Z'] := 'A';
   Code[' '] := '%';
-END;  {Initialize}
+END;
  
-PROCEDURE Encode(VAR S: Str);
+PROCEDURE Encode(VAR S: Str; Count: INTEGER);
 VAR
   Index: 1 .. Len;
-BEGIN {Encode}
-  FOR Index := 1 TO Len
+BEGIN           
+  FOR Index := 1 TO Count
   DO
-    IF S[Index] IN [' ', 'A' .. 'Z']
+    IF S[Index] IN CodeArr
     THEN
       WRITE(Code[S[Index]])
     ELSE
       WRITE(S[Index]);
   WRITELN
-END;  {Encode}
+END;  
  
-BEGIN {Encryption}
-  {Èíèöèàëèçèðîâàòü Code}
+BEGIN 
   Initialize(Code);
   WHILE NOT EOF
   DO
     BEGIN
-      I := 0;
-      WHILE NOT EOLN AND (I < Len)
+      I := 1;
+      Count := 0;
+      WHILE (NOT EOLN) AND (I <= Len)  
       DO
         BEGIN
+          READ(Msg[I]);
+          WRITE(Msg[I]);
           I := I + 1;
-          READ(Msg[I])
+          Count := Count + 1
         END;
-      READLN;
-      Encode(Msg)
+      READLN; 
+      WRITELN;
+      Encode(Msg, Count)   
     END
-END.  {Encryption}
+END.  
