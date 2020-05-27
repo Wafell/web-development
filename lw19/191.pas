@@ -1,22 +1,24 @@
 PROGRAM Prime(INPUT, OUTPUT);
 CONST
-  StarValue = 2;
-  FinalValue = 100;
-VAR
-  Sieve: SET OF StarValue .. FinalValue; 
-  Number, Count, CountMax: INTEGER;
+  StartValue = 2;
+  FinalValue = 100; 
+  FinalValueCount = 10;
+VAR 
+  Sieve: SET OF StartValue .. FinalValue; 
+  Number, Count, CountMax, I: INTEGER;
 BEGIN
-  Sieve := [StarValue .. FinalValue];
-  Count := StarValue;
-  CountMax := FinalValue;
+  Sieve := [StartValue .. FinalValue];
+  Count := StartValue;
+  CountMax := FinalValueCount; 
   WHILE Count < CountMax
   DO 
     BEGIN
       IF (Count IN Sieve)
       THEN
         BEGIN 
+          WRITE(Count, ' ');
           Number := Count;
-          WHILE Number < FinalValue
+          WHILE Number <= FinalValue
           DO
             BEGIN  
               IF (Number IN Sieve) AND (Number MOD Count = 0)
@@ -24,13 +26,16 @@ BEGIN
                 BEGIN
                   Sieve := Sieve - [Number]
                 END;
-              Number := Number + 1
-            END;
-          WRITE(Count, ' ')  
+              Number := Number + Count
+            END
         END;            
-      Count := Count + 1;
-      WHILE NOT (CountMax IN Sieve)
-      DO
-        CountMax := CountMax - 1    
-    END
-END.     
+      Count := Count + 1;   
+    END;  
+  FOR I := StartValue TO FinalValue
+  DO
+    BEGIN
+      IF I IN Sieve
+      THEN
+        WRITE(I, ' ')
+    END  
+END.      
