@@ -38,5 +38,3 @@ BEGIN
         WRITE(I, ' ')
     END  
 END.      
-  
-       
