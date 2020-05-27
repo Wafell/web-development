@@ -9,7 +9,7 @@ TYPE
   MatrixType = SET OF StartValue .. SymbolsInLetter;   
 VAR
   Ch: CHAR;
-  I, J, Count, StartCount, FinalCount: INTEGER;
+  I, J, Count: INTEGER;
 FUNCTION GetLetterMatrix(VAR Ch: CHAR): MatrixType;
 BEGIN 
   CASE Ch OF
@@ -36,18 +36,16 @@ BEGIN
       FOR I := StartValue TO LetterSize
       DO
         BEGIN
-          StartCount := Count * 5 + 1;
-          FinalCount := StartCount + 4; 
-          FOR J := StartCount TO FinalCount
+          FOR J := StartValue TO LetterSize
           DO  
             BEGIN
-              IF J IN Matrix
+              Count := Count + 1;
+              IF Count IN Matrix
               THEN
                 WRITE(FOut, PrintX)
               ELSE
                 WRITE(FOut, Space);                
-            END; 
-          Count := Count + 1;  
+            END;  
           WRITELN  
         END
     END    
