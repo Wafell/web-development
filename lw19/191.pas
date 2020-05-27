@@ -2,15 +2,14 @@ PROGRAM Prime(INPUT, OUTPUT);
 CONST
   StartValue = 2;
   FinalValue = 100; 
-  FinalValueCount = 10;
 VAR 
   Sieve: SET OF StartValue .. FinalValue; 
   Number, Count, CountMax, I: INTEGER;
 BEGIN
   Sieve := [StartValue .. FinalValue];
   Count := StartValue;
-  CountMax := FinalValueCount; 
-  WHILE Count < CountMax
+  CountMax := FinalValue; 
+  WHILE NOT (Count * Count = CountMax)
   DO 
     BEGIN
       IF (Count IN Sieve)
@@ -39,3 +38,5 @@ BEGIN
         WRITE(I, ' ')
     END  
 END.      
+  
+       
