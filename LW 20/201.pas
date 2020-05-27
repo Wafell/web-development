@@ -1,12 +1,12 @@
 PROGRAM XPrint(INPUT, OUTPUT);
 CONST
-  StartMatrix = 1;
+  StartValue = 1;                         
   LetterSize = 5;
   SymbolsInLetter = LetterSize * LetterSize;
   PrintX = 'X';
   Space = ' ';
 TYPE
-  MatrixType = SET OF StartMatrix .. SymbolsInLetter;   
+  MatrixType = SET OF StartValue .. SymbolsInLetter;   
 VAR
   Ch: CHAR;
   I, J, Count, StartCount, FinalCount: INTEGER;
@@ -33,7 +33,7 @@ BEGIN
     WRITELN('PLEASE, ENTER ANOTHER LETTER')
   ELSE
     BEGIN  
-      FOR I := StartMatrix TO LetterSize
+      FOR I := StartValue TO LetterSize
       DO
         BEGIN
           StartCount := Count * 5 + 1;
