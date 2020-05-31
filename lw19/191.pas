@@ -9,7 +9,7 @@ BEGIN
   Sieve := [StartValue .. FinalValue];
   Count := StartValue;
   CountMax := FinalValue; 
-  WHILE NOT (Count * Count = CountMax)
+  WHILE (Count * Count < CountMax)
   DO 
     BEGIN
       IF (Count IN Sieve)
