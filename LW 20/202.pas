@@ -1,24 +1,36 @@
 PROGRAM FileXPrint(INPUT, OUTPUT);
-  VAR
-    Ch, ChMatrix, InvInp: CHAR;
-    F: TEXT;
-    I, J, CountCh, CountF, CountWrite, StartMatrix: INTEGER;
-    Matrix: SET OF 1 .. 250; 
+CONST
+  StartMatrixValue = 0;
+  StartValue = 1;                         
+  LetterSize = 5;
+  MaxCountCh = LetterSize + LetterSize;
+  MaxMatrixValue = LetterSize * LetterSize;
+TYPE  
+  MatrixType = SET OF StartValue .. MaxMatrixValue;
+  ArrayType = ARRAY ['A' .. 'J'] OF MatrixType;  
+VAR
+  Ch: CHAR;
+  F: TEXT;
+  CountCh: INTEGER; 
+  LetterMatrix: ArrayType;
 PROCEDURE Print (VAR FOut: TEXT; Ch: CHAR); 
+VAR
+  StartMatrix: MatrixType;
+  Count, I, J: INTEGER;
+  InvInp: CHAR; 
 BEGIN
-  StartMatrix := 0;
   InvInp := '1';
   CASE Ch OF
-    'A': StartMatrix := 0;
-    'B': StartMatrix := 5; 
-    'C': StartMatrix := 10;
-    'D': StartMatrix := 15;
-    'E': StartMatrix := 20;
-    'F': StartMatrix := 25;
-    'G': StartMatrix := 30;
-    'H': StartMatrix := 35; 
-    'I': StartMatrix := 40;
-    'J': StartMatrix := 45;
+    'A': StartMatrix := LetterMatrix['A'];
+    'B': StartMatrix := LetterMatrix['B']; 
+    'C': StartMatrix := LetterMatrix['C'];
+    'D': StartMatrix := LetterMatrix['D'];
+    'E': StartMatrix := LetterMatrix['E'];
+    'F': StartMatrix := LetterMatrix['F'];
+    'G': StartMatrix := LetterMatrix['G'];
+    'H': StartMatrix := LetterMatrix['H']; 
+    'I': StartMatrix := LetterMatrix['I'];
+    'J': StartMatrix := LetterMatrix['J']; 
   ELSE 
     WRITELN('PLEASE, ENTER ANOTHER LETTER');
     InvInp := '2'   
@@ -26,56 +38,55 @@ BEGIN
   IF InvInp = '1'
   THEN
     BEGIN
-      StartMatrix := StartMatrix * 5;
-      CountWrite := 0;
-      FOR I := 0 TO 4
+      Count := StartMatrixValue;
+      FOR I := StartValue TO LetterSize
       DO
         BEGIN
-          FOR J := (1 + 5 * CountWrite + StartMatrix) TO (5 + 5 * CountWrite + StartMatrix)  
+          FOR J := StartValue TO LetterSize
           DO  
             BEGIN
-              IF J IN Matrix
+              Count := Count + 1;
+              IF Count IN StartMatrix
               THEN
                 WRITE(FOut, 'X')
               ELSE
-                WRITE(FOut, ' ');     
-            END;
-          WRITELN;
-          CountWrite := CountWrite +1  
+                WRITE(FOut, ' ');                
+            END;  
+          WRITELN  
         END
     END  
 END; 
-PROCEDURE ReadMatrix(VAR F: TEXT; ChMatrix: CHAR);
+PROCEDURE ReadMatrix(VAR F: TEXT; VAR LetterMatrix: ArrayType);
+VAR
+  MatrixNumber: INTEGER;
+  ChMatrix: CHAR;
+  Matrix: SET OF StartValue .. MaxMatrixValue;
 BEGIN
-  CountF := 1;
   WHILE NOT EOF(F)
   DO
     BEGIN
-      FOR I := 1 TO 5
+      READ(F, ChMatrix);
+      Matrix := [];
+      WHILE NOT EOLN(F)
       DO
         BEGIN
-          READ(F, ChMatrix);
-          IF ChMatrix = 'X'
-          THEN
-            BEGIN
-              Matrix := Matrix + [CountF]
-            END;  
-          CountF := CountF +1    
+          READ(F, MatrixNumber);
+          Matrix := Matrix + [MatrixNumber]
         END;
-      READLN(F)
-    END    
-END;     
+      LetterMatrix[ChMatrix] := Matrix;
+      READLN(F)    
+    END
+END;   
 BEGIN
-  ASSIGN(F, 'Matrix.txt');
+  ASSIGN(F, 'matrix1.txt');
   RESET(F);
-  ReadMatrix(F, ChMatrix);
+  ReadMatrix(F, LetterMatrix);
   CLOSE(F);
-  CountCh := CountCh + 0;
   IF EOLN
   THEN
     WRITELN
   ELSE 
-    WHILE (NOT EOLN) AND (CountCh < 10) 
+    WHILE (NOT EOLN) AND (CountCh < MaxCountCh) 
     DO
       BEGIN
         READ(Ch);
